@@ -14,17 +14,11 @@ def main():
     game = Game('X')
     
     nn = net.NeuralNet()
-    image = Image.open('/home/mathias/mnist/train/2/00178.png') Mean aus dem binaryproto extrahieren, wenn das nicht geht: In digits thread fragen, was mit image mean substraction ist, warum das nicht funktioniert.
+    image = Image.open('/home/mathias/mnist/train/2/00178.png')
     result = nn.get_result(image)
     print result
     
     
-    result = example.classify(
-            '/home/mathias/Cloned_repos/DIGITS/digits/jobs/20170401-220343-caab/snapshot_iter_1408.caffemodel',
-            '/home/mathias/Cloned_repos/DIGITS/digits/jobs/20170401-220343-caab/deploy.prototxt',
-            ['/home/mathias/mnist/train/2/00178.png'],
-            use_gpu=False
-        )
     #===========================================================================
     # result = example.classify(
     #         '/home/mathias/Cloned_repos/DIGITS/digits/jobs/20170610-012554-8beb/snapshot_iter_1408.caffemodel',
@@ -33,9 +27,9 @@ def main():
     #         mean_file='/home/mathias/Cloned_repos/DIGITS/digits/jobs/20170401-220250-9164/mean.binaryproto',
     #         use_gpu=False
     #     )
+    # print result.argmax(1)
+    # print result[0,result.argmax(1)]
     #===========================================================================
-    print result.argmax(1)
-    print result[0,result.argmax(1)]
     
     #===========================================================================
     # while True:
